@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useAnimation } from './contexts/AnimationContext.js';
 import R3FCanvas from './components/R3FCanvas.js';
 import { NetSelector, BaseSelector, ModeSelector, PlayerSlider } from './components/controlsUI';
@@ -37,16 +36,10 @@ function ResetCameraButton() {
 }
 
 function App() {
-    const [settingsOpen, setSettingsOpen] = useState(false);
-
     return (
         <main className='app-shell'>
             <header className='app-header'><AppTitle /></header>
-            <aside className={`app-controls${settingsOpen ? ' is-open' : ''}`} aria-label='正方体控制面板' id='cube-settings'>
-                <div className='mobile-settings-heading'>
-                    <strong>展开图设置</strong>
-                    <Button type='text' onClick={() => setSettingsOpen(false)} aria-label='关闭设置'>关闭</Button>
-                </div>
+            <aside className='app-controls' aria-label='正方体控制面板'>
                 <NetSelector />
                 <BaseSelector />
                 <ModeSelector />
@@ -55,7 +48,6 @@ function App() {
                 <R3FCanvas />
             </section>
             <section className='app-playback' aria-label='播放控制'>
-                <Button className='mobile-settings-button' onClick={() => setSettingsOpen(true)} aria-controls='cube-settings' aria-expanded={settingsOpen} block>选择展开图、基准面与模式</Button>
                 <PlayerSlider />
                 <Divider />
                 <ResetCameraButton />
