@@ -12,7 +12,7 @@ function PlayerSlider() {
     const [showLabel, setShowLabel] = useState(true);
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+        <div className='player-controls' style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
             <Title level={5} style={{ marginBottom: '5px' }}>播放控制</Title>
             {/** check box: show face labels */}
             <Checkbox
