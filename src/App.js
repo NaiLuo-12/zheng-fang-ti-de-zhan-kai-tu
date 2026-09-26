@@ -43,13 +43,14 @@ function App() {
                 <NetSelector />
                 <BaseSelector />
                 <ModeSelector />
-                <Divider />
-                <PlayerSlider />
-                <Divider />
-                <ResetCameraButton />
             </aside>
             <section className='app-viewer' aria-label='正方体三维视图'>
                 <R3FCanvas />
+            </section>
+            <section className='app-playback' aria-label='播放控制'>
+                <PlayerSlider />
+                <Divider />
+                <ResetCameraButton />
             </section>
         </main>
     );
